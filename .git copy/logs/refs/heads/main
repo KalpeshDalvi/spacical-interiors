@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 e9ffd12bb798b39875b3d385390378956f6aaa43 kalpesh <kdalvi@tsys.com> 1764646301 -0600	commit (initial): Initial commit
+e9ffd12bb798b39875b3d385390378956f6aaa43 e9ffd12bb798b39875b3d385390378956f6aaa43 kalpesh <kdalvi@tsys.com> 1764646381 -0600	Branch: renamed refs/heads/master to refs/heads/main
+e9ffd12bb798b39875b3d385390378956f6aaa43 e9ffd12bb798b39875b3d385390378956f6aaa43 kalpesh <kdalvi@tsys.com> 1764646400 -0600	Branch: renamed refs/heads/main to refs/heads/main
+e9ffd12bb798b39875b3d385390378956f6aaa43 e8651dffce5ca7f910e0f43fe0b2c3d5d0949172 kalpesh <kdalvi@tsys.com> 1764647476 -0600	commit: Initial commit
+e8651dffce5ca7f910e0f43fe0b2c3d5d0949172 e8651dffce5ca7f910e0f43fe0b2c3d5d0949172 kalpesh <kdalvi@tsys.com> 1764647519 -0600	Branch: renamed refs/heads/main to refs/heads/main
+e8651dffce5ca7f910e0f43fe0b2c3d5d0949172 e83cdd213b908d3813a5377d8029b03de54622b9 kshitija-Kalpesh <128260567+kshitija-Kalpesh@users.noreply.github.com> 1764650690 -0600	commit: Initial Next.js site
+e83cdd213b908d3813a5377d8029b03de54622b9 6a9c6199af560fdef2d1cae3eee63892e969e985 kshitija-Kalpesh <128260567+kshitija-Kalpesh@users.noreply.github.com> 1764650789 -0600	pull origin main --allow-unrelated-histories: Merge made by the 'recursive' strategy.
+6a9c6199af560fdef2d1cae3eee63892e969e985 51c4e3d6477b29b833ca587c0dbc01942a9ad00b kshitija-Kalpesh <128260567+kshitija-Kalpesh@users.noreply.github.com> 1764651292 -0600	commit: Clean project and remove node_modules
+51c4e3d6477b29b833ca587c0dbc01942a9ad00b 8825a510b0977cb87dbbd05630f699c24ebc812c kshitija-Kalpesh <128260567+kshitija-Kalpesh@users.noreply.github.com> 1764651606 -0600	commit: Remove node_modules from git history
