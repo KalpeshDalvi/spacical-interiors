@@ -8,64 +8,72 @@ export default function Home() {
     <main className="bg-[#020817] text-white overflow-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/images/hero.mp4" type="video/mp4" />
-        </video>
+      <section className="relative h-[90vh] w-full overflow-hidden">
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020817]/50 to-[#020817]" />
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover brightness-[0.85]"
+  >
+    <source src="/images/hero.mp4" type="video/mp4" />
+  </video>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-48">
-          <motion.p
-            className="tracking-[0.25em] text-gray-300 text-xs mb-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            PUNE • HOMES • WORKSPACES
-          </motion.p>
+  {/* Soft Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
 
-          <motion.h1
-            className="text-5xl md:text-6xl font-serif leading-tight mb-6"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-          >
-            Beautiful interiors, <br />
-            designed around you.
-          </motion.h1>
+  {/* Content */}
+  <div className="relative z-10 max-w-6xl mx-auto px-6 pt-48">
+    
+    <motion.p
+      className="tracking-[0.25em] text-blue-200 text-xs mb-3"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      PUNE • HOMES • WORKSPACES
+    </motion.p>
 
-          <motion.p
-            className="max-w-xl text-gray-300 mb-8 text-lg"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.9 }}
-          >
-            Transforming everyday spaces into functional, stylish and beautifully 
-            finished homes and offices—crafted to your personality and lifestyle.
-          </motion.p>
+    <motion.h1
+      className="text-5xl md:text-6xl font-serif leading-tight mb-6 text-white drop-shadow-xl"
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
+    >
+      Beautiful interiors, <br />
+      designed around you.
+    </motion.h1>
 
-          <motion.div 
-            className="flex gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <a className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition font-medium">
-              Get a Free Quote
-            </a>
-            <a className="px-6 py-3 rounded-full border border-blue-400 text-blue-300 hover:bg-blue-900/40 transition font-medium">
-              View Projects
-            </a>
-          </motion.div>
-        </div>
-      </section>
+    <motion.p
+      className="max-w-xl text-blue-100 mb-8 text-lg"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+      Transforming everyday spaces into functional, stylish and beautifully 
+      finished homes and offices—crafted to your personality and lifestyle.
+    </motion.p>
+
+    {/* Buttons */}
+    <motion.div 
+      className="flex gap-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <a className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition font-medium">
+        Get a Free Quote
+      </a>
+
+      <a className="px-6 py-3 rounded-full border border-blue-300 text-blue-200 hover:bg-white/10 transition font-medium">
+        View Projects
+      </a>
+    </motion.div>
+
+  </div>
+</section>
 
       {/* ================= SERVICES ================= */}
       <section id="services" className="py-28 px-6 max-w-7xl mx-auto">
