@@ -16,7 +16,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/images/hero.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-b from-[#020817]/50 to-[#020817]" />
@@ -189,17 +189,17 @@ const SERVICE_DATA = [
   {
     title: "Residential Interior Design",
     desc: "Modern layouts, premium materials & customized styling for your home.",
-    image: "/images/service1.jpg"
+    image: "/images/residential.jpg"
   },
   {
     title: "Commercial & Office Interiors",
     desc: "Smart branding-forward office designs that enhance productivity.",
-    image: "/images/service2.jpg"
+    image: "/images/commercial.jpg"
   },
   {
     title: "Modular Kitchens & Furniture",
     desc: "Precision-built modular solutions for durability and visual appeal.",
-    image: "/images/service3.jpg"
+    image: "/images/modular-kitchen.jpg"
   }
 ];
 
