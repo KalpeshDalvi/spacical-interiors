@@ -155,9 +155,9 @@ ${data.message || "No additional details provided."}
   return (
     <>
       <Section background="light">
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-heading text-brandText mb-3">Start your project</h1>
-          <p className="text-sm text-subtleText">
+        <div className="max-w-3xl py-8">
+          <h1 className="text-2xl md:text-3xl font-heading text-brandText mb-2">Start your project</h1>
+          <p className="text-sm text-subtleText leading-relaxed">
             Share a few details about your home or workspace and we&apos;ll get
             back within one business day to schedule a quick call or site
             visit.
@@ -166,7 +166,7 @@ ${data.message || "No additional details provided."}
       </Section>
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start max-w-7xl mx-auto">
           <form
             className="space-y-4"
             onSubmit={handleSubmit}
@@ -364,3 +364,4 @@ ${data.message || "No additional details provided."}
     </>
   );
 }
+
