@@ -27,7 +27,6 @@ export default function ContactPage() {
 
     try {
       // Using Web3Forms - Free email service for static sites
-      // Sign up at https://web3forms.com to get your access key
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -35,20 +34,58 @@ export default function ContactPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "1192efe4-4968-4285-99ce-1a64e0af9e1c", // Replace with your actual key from web3forms.com
-          subject: "New Interior Design Inquiry from Spacical Interiors",
-          from_name: data.name,
-          ...data,
+          access_key: "1192efe4-4968-4285-99ce-1a64e0af9e1c",
+          subject: "🏠 New Project Inquiry - Spacical Interiors",
+          from_name: "Spacical Interiors Website",
+          replyto: data.email || undefined,
+          
+          // Auto-reply to customer
+          autoresponse: true,
+          
+          // Formatted message content
+          message: `
+═══════════════════════════════════════
+     NEW INTERIOR DESIGN INQUIRY
+═══════════════════════════════════════
+
+📋 CONTACT INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 Name:          ${data.name}
+📱 Phone:         ${data.phone}
+📧 Email:         ${data.email || "Not provided"}
+📍 Location:      ${data.city || "Not specified"}
+
+🏗️ PROJECT DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 Project Type:  ${data.projectType}
+💰 Budget Range:  ${data.budget}
+📞 Callback:      ${requestCallback ? "✓ YES - Within 24 hours" : "Not requested"}
+
+💬 PROJECT DESCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${data.message || "No additional details provided."}
+
+═══════════════════════════════════════
+📅 Submitted: ${new Date().toLocaleString('en-IN', { 
+  timeZone: 'Asia/Kolkata',
+  dateStyle: 'full',
+  timeStyle: 'short'
+})}
+═══════════════════════════════════════
+          `.trim(),
         }),
       });
 
       const result = await response.json();
+      
+      console.log("Form submission result:", result);
       
       if (result.success) {
         setSubmitStatus("success");
         (e.target as HTMLFormElement).reset();
         setRequestCallback(false);
       } else {
+        console.error("Form error:", result);
         setSubmitStatus("error");
       }
     } catch (error) {
