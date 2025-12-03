@@ -156,8 +156,8 @@ ${data.message || "No additional details provided."}
     <>
       <Section background="light">
         <div className="max-w-3xl">
-          <h1 className="section-heading">Start your project</h1>
-          <p className="section-subheading">
+          <h1 className="text-3xl md:text-4xl font-heading text-brandText mb-3">Start your project</h1>
+          <p className="text-sm text-subtleText">
             Share a few details about your home or workspace and we&apos;ll get
             back within one business day to schedule a quick call or site
             visit.
@@ -317,7 +317,7 @@ ${data.message || "No additional details provided."}
                 </p>
               </div>
             )}
-            
+
           </form>
 
           <div className="space-y-4 text-sm text-subtleText leading-relaxed">
