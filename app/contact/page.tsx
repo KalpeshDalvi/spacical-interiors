@@ -319,13 +319,6 @@ ${data.message || "No additional details provided."}
               </div>
             )}
 
-            <p className="text-xs text-subtleText">
-              To enable email functionality: Sign up at{" "}
-              <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                web3forms.com
-              </a>
-            
-            </p>
           </form>
 
           <div className="space-y-4 text-sm text-subtleText leading-relaxed">
