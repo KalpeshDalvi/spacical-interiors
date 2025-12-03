@@ -18,7 +18,7 @@ export default function Home() {
     playsInline
     className="absolute inset-0 w-full h-full object-cover brightness-[0.95]"
   >
-    <source src="/videos/hero.mp4" type="video/mp4" />
+    <source src="/images/hero.mp4" type="video/mp4" />
   </video>
 
   {/* Soft Gradient Overlay */}
