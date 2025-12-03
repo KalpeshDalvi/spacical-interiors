@@ -155,12 +155,10 @@ ${data.message || "No additional details provided."}
   return (
     <>
       <Section background="light">
-        <div className="max-w-3xl py-8">
-          <h1 className="text-2xl md:text-3xl font-heading text-brandText mb-2">Start your project</h1>
-          <p className="text-sm text-subtleText leading-relaxed">
-            Share a few details about your home or workspace and we&apos;ll get
-            back within one business day to schedule a quick call or site
-            visit.
+        <div className="max-w-4xl py-6">
+          <h1 className="text-xl md:text-2xl font-heading text-brandText mb-1.5">Start your project</h1>
+          <p className="text-xs md:text-sm text-subtleText">
+            Share a few details and we&apos;ll get back within one business day.
           </p>
         </div>
       </Section>
@@ -364,4 +362,3 @@ ${data.message || "No additional details provided."}
     </>
   );
 }
-
