@@ -6,11 +6,12 @@
   color-scheme: light;
 }
 
+/* GLOBAL BODY */
 body {
-  @apply bg-white text-slateText font-body;
+  @apply bg-cream text-brandText font-body;
 }
 
-/* Reusable containers */
+/* Reusable sections */
 .section {
   @apply w-full py-20;
 }
@@ -20,21 +21,48 @@ body {
 }
 
 .section-heading {
-  @apply text-3xl sm:text-4xl font-heading text-navy mb-6;
+  @apply text-3xl sm:text-4xl font-heading text-brand mb-6;
 }
 
 .section-subheading {
-  @apply text-base sm:text-lg text-slateText max-w-2xl;
+  @apply text-base sm:text-lg text-subtleText max-w-2xl;
 }
 
+/* ==============================
+   BUTTONS — BRAND THEME
+   ============================== */
+
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-navy/90 hover:shadow-lg;
+  @apply inline-flex items-center justify-center rounded-full 
+         bg-brand text-white px-6 py-3 text-sm font-semibold 
+         shadow-md transition hover:bg-brandDark hover:shadow-lg;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-navy px-6 py-3 text-sm font-semibold text-navy transition hover:bg-navy hover:text-white;
+  @apply inline-flex items-center justify-center rounded-full 
+         border border-brandText px-6 py-3 text-sm font-semibold 
+         text-brandText transition hover:bg-brand hover:text-white;
 }
 
+.btn-light {
+  @apply inline-flex items-center justify-center rounded-full 
+         bg-white text-brandText px-6 py-3 text-sm font-semibold 
+         shadow hover:bg-brand/10 transition;
+}
+
+/* ==============================
+   CARDS — BRAND THEME
+   ============================== */
+
 .card {
-  @apply rounded-2xl bg-white shadow-card p-6 transition hover:-translate-y-1 hover:shadow-xl;
+  @apply rounded-2xl bg-cardBg border border-brand/20 
+         shadow-card p-6 transition hover:-translate-y-1 hover:shadow-xl;
+}
+
+.card-title {
+  @apply text-xl font-heading text-brandText mb-3;
+}
+
+.card-text {
+  @apply text-subtleText text-sm leading-relaxed;
 }
