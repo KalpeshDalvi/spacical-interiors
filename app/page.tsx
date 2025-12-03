@@ -31,7 +31,7 @@ export default function Home() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-40">
 
           <motion.p
-            className="tracking-[0.3em] text-brand font-semibold text-xs mb-4 uppercase"
+            className="tracking-[0.3em] text-brandDark font-bold text-sm mb-4 uppercase drop-shadow-lg bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full inline-block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
