@@ -312,7 +312,7 @@ ${data.message || "No additional details provided."}
             </div>
 
             <a
-              href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20your%20interior%20design%20services.%20I%27d%20like%20to%20discuss%20my%20project."
+              href="https://wa.me/917040172219?text=Hi%2C%20I%27m%20interested%20in%20your%20interior%20design%20services.%20I%27d%20like%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-3.5 text-sm font-semibold shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
@@ -340,13 +340,6 @@ ${data.message || "No additional details provided."}
               </div>
             )}
 
-            <p className="text-xs text-subtleText">
-              To enable email functionality: Sign up at{" "}
-              <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
-                web3forms.com
-              </a>
-              {" "}(free), get your access key, and replace YOUR_WEB3FORMS_ACCESS_KEY in the code.
-            </p>
           </form>
 
           <div className="space-y-4 text-sm text-subtleText leading-relaxed">
@@ -359,7 +352,7 @@ ${data.message || "No additional details provided."}
               forward.
             </p>
             <p className="font-semibold text-brandText">
-              WhatsApp: +91-XXXXXXXXXX
+              WhatsApp: +91-7040172219
             </p>
             <div className="h-px bg-brand/20 my-4" />
             <h2 className="font-heading text-xl text-brandText mb-2">
