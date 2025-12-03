@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -37,15 +38,22 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-navy text-white flex items-center justify-center text-lg font-semibold">
-            S
-          </div>
-          <span className="font-heading text-lg tracking-wide text-navy">
+        
+        {/* ---------- LOGO + BRAND NAME ---------- */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Spacical Interiors Logo"
+            width={36}
+            height={36}
+            className="rounded-full"
+          />
+          <span className="font-heading text-lg tracking-wide text-[#BF360C]">
             Spacical Interiors
           </span>
         </Link>
 
+        {/* ---------- DESKTOP NAV ---------- */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <Link
@@ -53,18 +61,24 @@ export default function Navbar() {
               href={item.href}
               className={`text-sm font-medium transition ${
                 pathname === item.href
-                  ? "text-navy"
-                  : "text-slateText hover:text-navy"
+                  ? "text-[#BF360C]"
+                  : "text-slateText hover:text-[#BF360C]"
               }`}
             >
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-primary text-xs">
-            Get a Free Quote
+
+          {/* CTA BUTTON */}
+          <Link
+            href="/contact"
+            className="text-xs px-5 py-2 rounded-full bg-[#D84315] hover:bg-[#BF360C] text-white shadow transition"
+          >
+            Book Your Consultation
           </Link>
         </div>
 
+        {/* ---------- MOBILE MENU BUTTON ---------- */}
         <button
           className="md:hidden rounded-full border border-slate-300 p-2 text-slate-600"
           onClick={() => setOpen((p) => !p)}
@@ -76,6 +90,7 @@ export default function Navbar() {
         </button>
       </nav>
 
+      {/* ---------- MOBILE NAV DROPDOWN ---------- */}
       {open && (
         <div className="md:hidden border-t border-slate-100 bg-white">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-2">
@@ -85,18 +100,19 @@ export default function Navbar() {
                 href={item.href}
                 className={`py-1 text-sm ${
                   pathname === item.href
-                    ? "text-navy font-semibold"
+                    ? "text-[#BF360C] font-semibold"
                     : "text-slateText"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
+
             <Link
               href="/contact"
-              className="mt-2 btn-primary text-center text-xs"
+              className="mt-2 text-center text-xs px-5 py-2 rounded-full bg-[#D84315] hover:bg-[#BF360C] text-white shadow transition"
             >
-              Get a Free Quote
+              Book Your Consultation
             </Link>
           </div>
         </div>
