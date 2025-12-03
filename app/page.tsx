@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -57,20 +57,27 @@ export default function Home() {
     </motion.p>
 
     {/* Buttons */}
-    <motion.div 
-      className="flex gap-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <a className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition font-medium">
-        Get a Free Quote
-      </a>
+<motion.div 
+  className="flex gap-4 mt-6"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+>
+  <Link
+    href="/contact"
+    className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition font-medium"
+  >
+    Get a Free Quote
+  </Link>
 
-      <a className="px-6 py-3 rounded-full border border-blue-300 text-blue-200 hover:bg-white/10 transition font-medium">
-        View Projects
-      </a>
-    </motion.div>
+  <Link
+    href="/projects"
+    className="px-6 py-3 rounded-full border border-blue-300 text-blue-200 hover:bg-white/10 transition font-medium"
+  >
+    View Projects
+  </Link>
+</motion.div>
+
 
     {/* TRUST BADGES — New */}
     <motion.div
@@ -87,7 +94,20 @@ export default function Home() {
   </div>
 </section>
 
+{/* ================= CTA SECTION (Moved to Top) ================= */}
+<section className="py-28 bg-gradient-to-r from-blue-700/20 to-blue-950/20 text-center">
+  <h2 className="text-4xl font-serif mb-6">Ready to Transform Your Space?</h2>
+  <p className="text-gray-300 mb-8">
+    Let’s build something beautiful, functional and timeless together.
+  </p>
 
+  <Link
+    href="/contact"
+    className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 transition text-lg font-medium inline-block"
+  >
+    Book Your Consultation
+  </Link>
+</section>
       {/* ================= SERVICES ================= */}
       <section id="services" className="py-28 px-6 max-w-7xl mx-auto">
         <h2 className="text-center text-4xl font-serif mb-4">Our Services</h2>
