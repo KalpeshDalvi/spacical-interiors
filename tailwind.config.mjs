@@ -5,22 +5,18 @@ const config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {
-      colors: {
-        // === BRAND COLORS ===
-        brand: {
-          dark: "#120408",       // Deep maroon background
-          primary: "#E25424",    // Logo main orange-red
-          accent: "#FF9B32",     // Bright accent orange
-          soft: "#FFF4EA",       // Light warm background
-        },
-
-        // (optional: keep your old colors if needed)
-        navy: "#0A2540",
-        slateText: "#4A5563",
-        sage: "#B7C9A9",
-        lightBg: "#F7FAFC"
-      },
+extend: {
+  colors: {
+    brand: {
+      DEFAULT: "#BF360C",   // main color
+      dark: "#A32E0A",
+      light: "#FF7043",
+    },
+    navy: "#0A2540",
+    slateText: "#4A5563",
+    sage: "#B7C9A9",
+    lightBg: "#F7FAFC",
+  },
 
       // Fonts
       fontFamily: {
