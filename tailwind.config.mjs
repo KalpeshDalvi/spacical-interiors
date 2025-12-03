@@ -1,18 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}"
+    "./app/*.{js,ts,jsx,tsx,mdx}",           // root files (layout.tsx, page.tsx)
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",        // all nested files
+    "./components/**/*.{js,ts,jsx,tsx,mdx}", // components
+    "./pages/**/*.{js,ts,jsx,tsx}",          // pages (if used)
+    "./public/**/*.{html,js}"                // static content
   ],
   theme: {
     extend: {
       colors: {
-        brand: "#E65126",        // Primary brand (warm orange)
-        brandDark: "#A4381F",    // Darker variant for hover / accents
-        brandText: "#3B0D06",    // Dark text color (brownish)
-        cream: "#FDF2E9",        // Soft background base
-        cardBg: "#FFFFFF",       // Card / section backgrounds
-        subtleText: "#6B463B",   // Muted paragraph / secondary text
+        brand: "#E65126",
+        brandDark: "#A4381F",
+        brandText: "#3B0D06",
+        cream: "#FDF2E9",
+        cardBg: "#FFFFFF",
+        subtleText: "#6B463B",
       },
       fontFamily: {
         heading: ["'Playfair Display'", "serif"],
