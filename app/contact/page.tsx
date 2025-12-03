@@ -155,9 +155,9 @@ ${data.message || "No additional details provided."}
   return (
     <>
       <Section background="light">
-        <div className="max-w-3xl py-2">
-          <h1 className="text-xl md:text-2xl font-heading text-brandText mb-1">Start your project</h1>
-          <p className="text-xs md:text-sm text-subtleText">
+        <div className="max-w-4xl py-3">
+          <h1 className="text-lg md:text-xl font-heading text-brandText mb-0.5">Start your project</h1>
+          <p className="text-xs text-subtleText">
             Share a few details and we&apos;ll get back within one business day.
           </p>
         </div>
