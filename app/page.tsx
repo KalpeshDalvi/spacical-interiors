@@ -1,287 +1,203 @@
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="bg-[#020817] text-white overflow-hidden">
+    <main className="bg-cream text-brandText overflow-hidden">
 
-{/* ================= HERO SECTION ================= */}
-<section className="relative h-[90vh] w-full overflow-hidden">
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative h-[90vh] w-full overflow-hidden">
 
-  {/* Background Video */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover brightness-[0.95]"
-  >
-    <source src="/images/hero.mp4" type="video/mp4" />
-  </video>
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.9]"
+        >
+          <source src="/images/hero.mp4" type="video/mp4" />
+        </video>
 
-  {/* Soft Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/70" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cream/60 to-cream" />
 
-  {/* Content */}
-  <div className="relative z-10 max-w-6xl mx-auto px-6 pt-48">
-    
-    <motion.p
-      className="tracking-[0.25em] text-brand-light text-xs mb-3"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      PUNE • HOMES • WORKSPACES
-    </motion.p>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-40">
 
-    <motion.h1
-      className="text-5xl md:text-6xl font-serif leading-tight mb-6 text-white drop-shadow-xl"
-      initial={{ y: 40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7 }}
-    >
-      Beautiful interiors, <br />
-      designed around you.
-    </motion.h1>
+          <motion.p
+            className="tracking-[0.25em] text-brandDark/80 text-xs mb-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            PUNE • HOMES • WORKSPACES
+          </motion.p>
 
-    <motion.p
-      className="max-w-xl text-gray-200 mb-8 text-lg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.9 }}
-    >
-      Transforming everyday spaces into functional, stylish and beautifully 
-      finished homes and offices—crafted to your personality and lifestyle.
-    </motion.p>
+          <motion.h1
+            className="text-5xl md:text-6xl font-serif text-brand drop-shadow mb-6"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            Beautiful interiors, <br />
+            designed around you.
+          </motion.h1>
 
-    {/* Buttons */}
-<motion.div 
-  className="flex gap-4 mt-6"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
->
-  <Link
-    href="/contact"
-    className="px-6 py-3 rounded-full bg-brand hover:bg-brand-dark transition font-medium text-white"
-  >
-    Book Your Consultation
-  </Link>
+          <motion.p
+            className="max-w-xl text-subtleText mb-8 text-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.9 }}
+          >
+            Transforming everyday spaces into functional, stylish and beautifully 
+            finished homes—crafted to your personality and lifestyle.
+          </motion.p>
 
-  <Link
-    href="/projects"
-    className="px-6 py-3 rounded-full border border-brand-light text-brand-light hover:bg-brand/10 transition font-medium"
-  >
-    View Projects
-  </Link>
-</motion.div>
+          {/* Hero Buttons */}
+          <motion.div 
+            className="flex gap-4 mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <Link href="/contact" className="btn-primary">
+              Book Your Consultation
+            </Link>
 
-    {/* TRUST BADGES */}
-    <motion.div
-      className="flex flex-wrap gap-8 mt-10 text-white/80 text-sm"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.3 }}
-    >
-      <p><span className="text-brand">⭐</span> 4.9/5 Customer Rating</p>
-      <p><span className="text-brand">🏠</span> 50+ Homes Designed</p>
-      <p><span className="text-brand">🛋️</span> Premium Quality & Finishes</p>
-    </motion.div>
+            <Link href="/projects" className="btn-secondary">
+              View Projects
+            </Link>
+          </motion.div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
-{/* ================= SERVICES ================= */}
-<section id="services" className="py-28 px-6 max-w-7xl mx-auto">
-  <h2 className="text-center text-4xl font-serif mb-4 text-brand">
-    Our Services
-  </h2>
-  <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
-    End-to-end interior solutions for homes, offices, commercial spaces & more.
-  </p>
+      {/* ================= SERVICES ================= */}
+      <section className="py-28 px-6 max-w-7xl mx-auto">
+        <h2 className="section-heading text-center">Our Services</h2>
+        <p className="section-subheading text-center mb-12">
+          End-to-end interior solutions for homes, offices, and commercial spaces.
+        </p>
 
-  <div className="grid md:grid-cols-3 gap-10">
-    {SERVICE_DATA.map((service, i) => (
-      <motion.div
-        key={i}
-        whileHover={{ y: -8 }}
-        className="bg-[#0b1222] p-8 rounded-xl border border-white/5 hover:border-brand-light hover:shadow-lg transition"
-      >
-        <Image
-          src={service.image}
-          width={500}
-          height={350}
-          alt={service.title}
-          className="rounded-lg mb-6"
-        />
-        <h3 className="text-xl font-semibold text-brand-light mb-3">{service.title}</h3>
-        <p className="text-gray-400 text-sm">{service.desc}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
+        <div className="grid md:grid-cols-3 gap-10">
+          {SERVICE_DATA.map((service, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ y: -6 }}
+              className="card"
+            >
+              <Image
+                src={service.image}
+                width={500}
+                height={350}
+                alt={service.title}
+                className="rounded-lg mb-6"
+              />
+              <h3 className="text-xl font-semibold text-brand mb-2">{service.title}</h3>
+              <p className="card-text">{service.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-{/* ================= WHY CHOOSE US ================= */}
-<section className="py-28 px-6 max-w-6xl mx-auto">
-  <h2 className="text-center text-4xl font-serif mb-12 text-brand">
-    Why Choose Spacical Interiors?
-  </h2>
+      {/* ================= WHY CHOOSE US ================= */}
+      <section className="py-28 px-6 max-w-6xl mx-auto">
+        <h2 className="section-heading text-center">Why Choose Spacical Interiors?</h2>
 
-  <div className="grid md:grid-cols-4 gap-10">
-    {WHY_US.map((item, i) => (
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="bg-[#0b1222] p-6 rounded-xl border border-white/5 hover:border-brand-light"
-      >
-        <h3 className="text-xl font-semibold text-brand-light mb-3">{item.title}</h3>
-        <p className="text-gray-400 text-sm">{item.desc}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
+        <div className="grid md:grid-cols-4 gap-10 mt-10">
+          {WHY_US.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="card"
+            >
+              <h3 className="text-xl font-heading text-brand mb-3">
+                {item.title}
+              </h3>
+              <p className="card-text">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-{/* ================= ABOUT US ================= */}
-<section className="py-28 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      {/* ================= ABOUT US ================= */}
+      <section className="py-28 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-  {/* LEFT IMAGE */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.9 }}
-  >
-    <Image
-      src="/images/about-main.jpg"
-      width={700}
-      height={550}
-      alt="Luxury Living Room Interior"
-      className="rounded-xl shadow-lg object-cover w-full"
-    />
-  </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+        >
+          <Image
+            src="/images/about-main.jpg"
+            width={700}
+            height={550}
+            alt="Interior"
+            className="rounded-xl shadow-lg"
+          />
+        </motion.div>
 
-  {/* RIGHT IMAGES + TEXT */}
-  <div className="space-y-8">
+        <div className="space-y-10">
 
-    <Image
-      src="/images/about-2.jpg"
-      width={650}
-      height={400}
-      alt="Modern Interior Design"
-      className="rounded-xl shadow-lg object-cover w-full"
-    />
+          <Image
+            src="/images/about-2.jpg"
+            width={650}
+            height={400}
+            alt="Design"
+            className="rounded-xl shadow-lg"
+          />
 
-    <Image
-      src="/images/about-3.jpg"
-      width={650}
-      height={400}
-      alt="Interior Decor Inspiration"
-      className="rounded-xl shadow-lg object-cover w-full"
-    />
+          <Image
+            src="/images/about-3.jpg"
+            width={650}
+            height={400}
+            alt="Decor"
+            className="rounded-xl shadow-lg"
+          />
 
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="mt-4"
-    >
-      <h2 className="text-4xl font-serif mb-6 text-brand">About Us</h2>
+          <div>
+            <h2 className="section-heading">About Us</h2>
+            <p className="text-subtleText mb-6">
+              We create functional, beautiful and timeless spaces tailored uniquely to you.
+            </p>
+            <Link href="/about" className="btn-primary">Learn More</Link>
+          </div>
 
-      <p className="text-gray-300 mb-4 leading-relaxed">
-        We transform everyday spaces into stylish, functional and beautifully crafted environments.
-      </p>
+        </div>
+      </section>
 
-      <p className="text-gray-400 mb-8 leading-relaxed">
-        With premium-quality execution, innovative concepts, and timeless design, every space we create feels personal and elegant.
-      </p>
-
-      <a className="px-6 py-3 inline-block rounded-full bg-brand hover:bg-brand-dark transition text-white">
-        Learn More
-      </a>
-    </motion.div>
-
-  </div>
-</section>
-
-{/* ================= TESTIMONIALS ================= */}
-<section className="py-28 px-6 max-w-6xl mx-auto">
-  <h2 className="text-center text-4xl font-serif mb-2 text-brand">
-    What Our Clients Say
-  </h2>
-  <p className="text-center text-gray-400 mb-12">
-    Real experiences from homeowners & businesses.
-  </p>
-
-  <div className="grid md:grid-cols-3 gap-10">
-    {TESTIMONIALS.map((t, i) => (
-      <motion.div
-        key={i}
-        whileHover={{ scale: 1.03 }}
-        className="bg-[#0b1222] p-6 rounded-xl border border-white/5 hover:border-brand-light"
-      >
-        <p className="text-gray-300 mb-4 italic">“{t.quote}”</p>
-        <h4 className="font-semibold text-brand">{t.name}</h4>
-        <p className="text-gray-500 text-sm">{t.location}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
-
-{/* ================= CTA SECTION ================= */}
-<section className="py-28 bg-gradient-to-r from-brand/10 to-brand-dark/10 text-center">
-  <h2 className="text-4xl font-serif mb-6 text-brand">
-    Ready to Transform Your Space?
-  </h2>
-  <p className="text-gray-300 mb-8">
-    Let’s build something beautiful, functional and timeless together.
-  </p>
-
-  <Link
-    href="/contact"
-    className="px-8 py-4 rounded-full bg-brand hover:bg-brand-dark transition text-lg font-medium text-white"
-  >
-    Book Your Consultation
-  </Link>
-</section>
-
-</main>
+    </main>
   );
 }
 
-
-/* --------------------------
-   DATA SECTION
---------------------------- */
-
+/* DATA */
 const SERVICE_DATA = [
   {
     title: "Residential Interior Design",
-    desc: "Modern layouts, premium materials & customized styling for your home.",
-    image: "/images/residential.jpg"
+    desc: "Modern layouts with premium materials and custom styling.",
+    image: "/images/residential.jpg",
   },
   {
     title: "Commercial & Office Interiors",
-    desc: "Smart branding-forward office designs that enhance productivity.",
-    image: "/images/commercial.jpg"
+    desc: "Brand-forward office designs that boost productivity.",
+    image: "/images/commercial.jpg",
   },
   {
     title: "Modular Kitchens & Furniture",
-    desc: "Precision-built modular solutions for durability and visual appeal.",
-    image: "/images/modular-kitchen.jpg"
-  }
+    desc: "Precision-built modular solutions for durability and style.",
+    image: "/images/modular-kitchen.jpg",
+  },
 ];
 
 const WHY_US = [
-  { title: "End-to-End Execution", desc: "From planning to completion—handled seamlessly." },
-  { title: "Premium Quality", desc: "Top-grade materials & long-lasting finishes." },
-  { title: "Creative Expertise", desc: "A skilled team crafting unique aesthetic spaces." },
-  { title: "Personalized Solutions", desc: "Your taste, needs & lifestyle shape the design." }
-];
-
-const TESTIMONIALS = [
-  { name: "Rohan Joshi", location: "Pune", quote: "Absolutely loved their work!" },
-  { name: "Priya Menon", location: "Mumbai", quote: "Elegant design & smooth execution." },
-  { name: "Arjun Patel", location: "Hyderabad", quote: "Highly professional & detail-oriented." }
+  { title: "End-to-End Execution", desc: "We manage everything from concept to delivery." },
+  { title: "Premium Quality", desc: "We use best-in-class materials and skilled craftsmanship." },
+  { title: "Creative Expertise", desc: "Unique aesthetic aligned with your taste." },
+  { title: "Personalized Solutions", desc: "Every design is crafted around your lifestyle." },
 ];
