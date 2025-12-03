@@ -7,17 +7,74 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [requestCallback, setRequestCallback] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const validatePhone = (phone: string) => {
+    // Remove all non-digit characters
+    const cleaned = phone.replace(/\D/g, '');
+    
+    // Indian phone numbers: 10 digits starting with 6-9
+    // Or with country code: +91 followed by 10 digits
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const phoneWithCodeRegex = /^91[6-9]\d{9}$/;
+    
+    if (!cleaned) {
+      return "Phone number is required";
+    }
+    
+    if (phoneRegex.test(cleaned) || phoneWithCodeRegex.test(cleaned)) {
+      return "";
+    }
+    
+    return "Please enter a valid Indian mobile number (10 digits starting with 6-9)";
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email) return ""; // Email is optional
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address";
+    }
+    return "";
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setPhoneError(validatePhone(value));
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmailError(validateEmail(value));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    const formData = new FormData(e.currentTarget);
+    const phone = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+    
+    // Validate before submission
+    const phoneValidation = validatePhone(phone);
+    const emailValidation = validateEmail(email);
+    
+    setPhoneError(phoneValidation);
+    setEmailError(emailValidation);
+    
+    if (phoneValidation || emailValidation) {
+      return; // Don't submit if there are errors
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
-      phone: formData.get("phone"),
-      email: formData.get("email"),
+      phone: phone,
+      email: email,
       city: formData.get("city"),
       projectType: formData.get("projectType"),
       budget: formData.get("budget"),
@@ -135,8 +192,19 @@ ${data.message || "No additional details provided."}
                   type="tel"
                   name="phone"
                   required
-                  className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                  pattern="[6-9][0-9]{9}"
+                  maxLength={10}
+                  placeholder="9876543210"
+                  onChange={handlePhoneChange}
+                  className={`w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-all ${
+                    phoneError 
+                      ? 'border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-200' 
+                      : 'border-brand/20 focus:border-brand focus:ring-2 focus:ring-brand/20'
+                  }`}
                 />
+                {phoneError && (
+                  <p className="text-xs text-red-600 mt-1">⚠️ {phoneError}</p>
+                )}
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -147,8 +215,17 @@ ${data.message || "No additional details provided."}
                 <input
                   type="email"
                   name="email"
-                  className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                  placeholder="your.email@example.com"
+                  onChange={handleEmailChange}
+                  className={`w-full rounded-xl border px-4 py-2.5 text-sm outline-none transition-all ${
+                    emailError 
+                      ? 'border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-200' 
+                      : 'border-brand/20 focus:border-brand focus:ring-2 focus:ring-brand/20'
+                  }`}
                 />
+                {emailError && (
+                  <p className="text-xs text-red-600 mt-1">⚠️ {emailError}</p>
+                )}
               </div>
               <div>
                 <label className="block text-sm font-medium text-brandText mb-1">
@@ -247,7 +324,7 @@ ${data.message || "No additional details provided."}
               <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
                 web3forms.com
               </a>
-              {" "}(free), get your access key, and replace YOUR_WEB3FORMS_ACCESS_KEY in the code.
+            
             </p>
           </form>
 
