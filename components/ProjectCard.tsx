@@ -1,24 +1,35 @@
-export type Project = {
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+export interface Project {
   title: string;
   location: string;
   type: string;
   description: string;
-};
+  image: string;
+}
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card h-full">
-      <div className="aspect-[4/3] w-full rounded-xl bg-slate-200 mb-4" />
-      <div className="flex items-baseline justify-between gap-2 mb-1">
-        <h3 className="font-heading text-lg text-navy">{project.title}</h3>
-        <span className="text-xs uppercase tracking-wide text-slateText/70">
-          {project.type}
-        </span>
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all"
+    >
+      <Image
+        src={project.image}
+        width={600}
+        height={400}
+        alt={project.title}
+        className="w-full h-48 object-cover"
+      />
+
+      <div className="p-5">
+        <p className="text-sm text-blue-600 font-medium">{project.type}</p>
+        <h3 className="text-xl font-semibold mt-1">{project.title}</h3>
+        <p className="text-gray-500 text-sm">{project.location}</p>
+
+        <p className="text-gray-600 text-sm mt-3">{project.description}</p>
       </div>
-      <p className="text-xs text-slateText/70 mb-2">{project.location}</p>
-      <p className="text-sm text-slateText/90 leading-relaxed">
-        {project.description}
-      </p>
-    </article>
+    </motion.div>
   );
 }
