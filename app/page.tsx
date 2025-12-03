@@ -67,7 +67,7 @@ export default function Home() {
     href="/contact"
     className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition font-medium"
   >
-    Get a Free Quote
+    Book Your Consultation
   </Link>
 
   <Link
@@ -94,20 +94,6 @@ export default function Home() {
   </div>
 </section>
 
-{/* ================= CTA SECTION (Moved to Top) ================= */}
-<section className="py-28 bg-gradient-to-r from-blue-700/20 to-blue-950/20 text-center">
-  <h2 className="text-4xl font-serif mb-6">Ready to Transform Your Space?</h2>
-  <p className="text-gray-300 mb-8">
-    Let’s build something beautiful, functional and timeless together.
-  </p>
-
-  <Link
-    href="/contact"
-    className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 transition text-lg font-medium inline-block"
-  >
-    Book Your Consultation
-  </Link>
-</section>
       {/* ================= SERVICES ================= */}
       <section id="services" className="py-28 px-6 max-w-7xl mx-auto">
         <h2 className="text-center text-4xl font-serif mb-4">Our Services</h2>
