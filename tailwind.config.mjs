@@ -5,29 +5,22 @@ const config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-extend: {
-  colors: {
-    brand: {
-      DEFAULT: "#BF360C",   // main color
-      dark: "#A32E0A",
-      light: "#FF7043",
-    },
-    navy: "#0A2540",
-    slateText: "#4A5563",
-    sage: "#B7C9A9",
-    lightBg: "#F7FAFC",
-  },
-
-      // Fonts
+    extend: {
+      colors: {
+        brand: "#E65126",        // Primary brand (warm orange)
+        brandDark: "#A4381F",    // Darker variant for hover / accents
+        brandText: "#3B0D06",    // Dark text color (brownish)
+        cream: "#FDF2E9",        // Soft background base
+        cardBg: "#FFFFFF",       // Card / section backgrounds
+        subtleText: "#6B463B",   // Muted paragraph / secondary text
+      },
       fontFamily: {
         heading: ["'Playfair Display'", "serif"],
-        body: ["Inter", "system-ui", "sans-serif"]
+        body: ["Inter", "system-ui", "sans-serif"],
       },
-
-      // Shadows
       boxShadow: {
-        card: "0 18px 35px rgba(15, 23, 42, 0.12)"
-      }
+        card: "0 18px 35px rgba(15, 23, 42, 0.12)",
+      },
     }
   },
   plugins: [],
