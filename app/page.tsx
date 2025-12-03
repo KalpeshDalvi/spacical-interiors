@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <main className="bg-[#020817] text-white overflow-hidden">
 
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[90vh] w-full overflow-hidden">
+     {/* ================= HERO SECTION ================= */}
+<section className="relative h-[90vh] w-full overflow-hidden">
 
   {/* Background Video */}
   <video
@@ -16,13 +16,13 @@ export default function Home() {
     loop
     muted
     playsInline
-    className="absolute inset-0 w-full h-full object-cover brightness-[0.85]"
+    className="absolute inset-0 w-full h-full object-cover brightness-[0.95]"
   >
-    <source src="/images/hero.mp4" type="video/mp4" />
+    <source src="/videos/hero.mp4" type="video/mp4" />
   </video>
 
   {/* Soft Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/70" />
 
   {/* Content */}
   <div className="relative z-10 max-w-6xl mx-auto px-6 pt-48">
@@ -72,8 +72,21 @@ export default function Home() {
       </a>
     </motion.div>
 
+    {/* TRUST BADGES — New */}
+    <motion.div
+      className="flex flex-wrap gap-8 mt-10 text-white/70 text-sm"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.3 }}
+    >
+      <p>⭐ 4.9/5 Customer Rating</p>
+      <p>🏠 50+ Homes Designed</p>
+      <p>🛋️ Premium Quality & Finishes</p>
+    </motion.div>
+
   </div>
 </section>
+
 
       {/* ================= SERVICES ================= */}
       <section id="services" className="py-28 px-6 max-w-7xl mx-auto">
