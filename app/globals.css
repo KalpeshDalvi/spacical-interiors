@@ -29,38 +29,48 @@ body {
 }
 
 /* ==============================
-   BUTTONS — BRAND THEME
+   BUTTONS — MODERN BRAND THEME
    ============================== */
 
 .btn-primary {
   @apply inline-flex items-center justify-center rounded-full 
-         bg-brand text-white px-6 py-3 text-sm font-semibold 
-         shadow-md transition hover:bg-brandDark hover:shadow-lg;
+         bg-gradient-to-r from-brand to-brandAccent text-white 
+         px-8 py-3.5 text-sm font-semibold 
+         shadow-lg shadow-brand/30 transition-all duration-300
+         hover:shadow-xl hover:shadow-brand/40 hover:scale-105
+         active:scale-95;
 }
 
 .btn-secondary {
   @apply inline-flex items-center justify-center rounded-full 
-         border border-brandText px-6 py-3 text-sm font-semibold 
-         text-brandText transition hover:bg-brand hover:text-white;
+         border-2 border-brand px-8 py-3.5 text-sm font-semibold 
+         text-brand bg-white/80 backdrop-blur-sm
+         transition-all duration-300 
+         hover:bg-brand hover:text-white hover:scale-105
+         active:scale-95 shadow-md hover:shadow-lg;
 }
 
 .btn-light {
   @apply inline-flex items-center justify-center rounded-full 
-         bg-white text-brandText px-6 py-3 text-sm font-semibold 
-         shadow hover:bg-brand/10 transition;
+         bg-white/90 backdrop-blur-sm text-brandText 
+         px-8 py-3.5 text-sm font-semibold 
+         shadow-md hover:bg-white hover:shadow-lg 
+         transition-all duration-300 hover:scale-105 active:scale-95;
 }
 
 /* ==============================
-   CARDS — BRAND THEME
+   CARDS — MODERN BRAND THEME
    ============================== */
 
 .card {
-  @apply rounded-2xl bg-cardBg border border-brand/20 
-         shadow-card p-6 transition hover:-translate-y-1 hover:shadow-xl;
+  @apply rounded-3xl bg-cardBg border border-brand/10 
+         shadow-card p-8 transition-all duration-300
+         hover:-translate-y-2 hover:shadow-cardHover 
+         hover:border-brand/30 backdrop-blur-sm;
 }
 
 .card-title {
-  @apply text-xl font-heading text-brandText mb-3;
+  @apply text-xl font-heading text-brandText mb-3 tracking-wide;
 }
 
 .card-text {
