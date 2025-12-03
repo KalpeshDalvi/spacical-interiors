@@ -7,15 +7,28 @@ const config = {
   theme: {
     extend: {
       colors: {
+        // === BRAND COLORS ===
+        brand: {
+          dark: "#120408",       // Deep maroon background
+          primary: "#E25424",    // Logo main orange-red
+          accent: "#FF9B32",     // Bright accent orange
+          soft: "#FFF4EA",       // Light warm background
+        },
+
+        // (optional: keep your old colors if needed)
         navy: "#0A2540",
         slateText: "#4A5563",
         sage: "#B7C9A9",
         lightBg: "#F7FAFC"
       },
+
+      // Fonts
       fontFamily: {
         heading: ["'Playfair Display'", "serif"],
         body: ["Inter", "system-ui", "sans-serif"]
       },
+
+      // Shadows
       boxShadow: {
         card: "0 18px 35px rgba(15, 23, 42, 0.12)"
       }
