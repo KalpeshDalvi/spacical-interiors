@@ -1,6 +1,64 @@
+"use client";
+
 import Section from "@/components/Section";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [requestCallback, setRequestCallback] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      city: formData.get("city"),
+      projectType: formData.get("projectType"),
+      budget: formData.get("budget"),
+      message: formData.get("message"),
+      requestCallback: requestCallback,
+    };
+
+    try {
+      // Using Web3Forms - Free email service for static sites
+      // Sign up at https://web3forms.com to get your access key
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your actual key from web3forms.com
+          subject: "New Interior Design Inquiry from Spacical Interiors",
+          from_name: data.name,
+          ...data,
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+        setRequestCallback(false);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Section background="light">
@@ -18,62 +76,61 @@ export default function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <form
             className="space-y-4"
-            action="#"
-            method="post"
+            onSubmit={handleSubmit}
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-navy mb-1">
-                  Full name
+                <label className="block text-sm font-medium text-brandText mb-1">
+                  Full name *
                 </label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                  className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy mb-1">
-                  Phone / WhatsApp
+                <label className="block text-sm font-medium text-brandText mb-1">
+                  Phone / WhatsApp *
                 </label>
                 <input
                   type="tel"
                   name="phone"
                   required
-                  className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                  className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
                 />
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-navy mb-1">
+                <label className="block text-sm font-medium text-brandText mb-1">
                   Email
                 </label>
                 <input
                   type="email"
                   name="email"
-                  className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                  className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy mb-1">
+                <label className="block text-sm font-medium text-brandText mb-1">
                   City / Area
                 </label>
                 <input
                   type="text"
                   name="city"
-                  className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                  className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-brandText mb-1">
                 Project type
               </label>
               <select
                 name="projectType"
-                className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
               >
                 <option>New home interiors</option>
                 <option>Home renovation</option>
@@ -83,12 +140,12 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-brandText mb-1">
                 Approximate budget
               </label>
               <select
                 name="budget"
-                className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
               >
                 <option>Not sure yet</option>
                 <option>₹5L – ₹10L</option>
@@ -98,28 +155,67 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-navy mb-1">
+              <label className="block text-sm font-medium text-brandText mb-1">
                 Tell us a bit about your space
               </label>
               <textarea
                 name="message"
                 rows={4}
-                className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm outline-none focus:border-navy focus:ring-1 focus:ring-navy/40"
+                className="w-full rounded-xl border border-brand/20 px-4 py-2.5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
                 placeholder="E.g. 3BHK in Kharadi, possession in August, need full interiors including modular kitchen…"
               />
             </div>
-            <button type="submit" className="btn-primary">
-              Submit enquiry
+            
+            {/* Callback Toggle */}
+            <div className="flex items-center gap-3 p-4 bg-brand/5 rounded-xl border border-brand/20">
+              <input
+                type="checkbox"
+                id="callback"
+                checked={requestCallback}
+                onChange={(e) => setRequestCallback(e.target.checked)}
+                className="w-5 h-5 text-brand border-brand/30 rounded focus:ring-2 focus:ring-brand/20 cursor-pointer"
+              />
+              <label htmlFor="callback" className="text-sm font-medium text-brandText cursor-pointer">
+                📞 Request a callback within 24 hours
+              </label>
+            </div>
+
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Submit enquiry"}
             </button>
-            <p className="text-xs text-slateText/70">
-              This form is currently set up as a front-end-only demo. Ask your
-              developer or hosting provider to connect it to an email or CRM
-              service (e.g. Formspree, Getform or a custom API).
+
+            {/* Status Messages */}
+            {submitStatus === "success" && (
+              <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
+                <p className="text-sm text-green-800 font-medium">
+                  ✓ Thank you! We'll get back to you within 1 business day.
+                </p>
+              </div>
+            )}
+            
+            {submitStatus === "error" && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-xl">
+                <p className="text-sm text-red-800 font-medium">
+                  ✗ Something went wrong. Please try again or contact us via WhatsApp.
+                </p>
+              </div>
+            )}
+
+            <p className="text-xs text-subtleText">
+              To enable email functionality: Sign up at{" "}
+              <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                web3forms.com
+              </a>
+              {" "}(free), get your access key, and replace YOUR_WEB3FORMS_ACCESS_KEY in the code.
             </p>
           </form>
 
-          <div className="space-y-4 text-sm text-slateText leading-relaxed">
-            <h2 className="font-heading text-xl text-navy mb-2">
+          <div className="space-y-4 text-sm text-subtleText leading-relaxed">
+            <h2 className="font-heading text-xl text-brandText mb-2">
               Prefer WhatsApp?
             </h2>
             <p>
@@ -127,11 +223,11 @@ export default function ContactPage() {
               WhatsApp and we&apos;ll suggest the best way to take things
               forward.
             </p>
-            <p className="font-semibold text-navy">
+            <p className="font-semibold text-brandText">
               WhatsApp: +91-XXXXXXXXXX
             </p>
-            <div className="h-px bg-slate-200 my-4" />
-            <h2 className="font-heading text-xl text-navy mb-2">
+            <div className="h-px bg-brand/20 my-4" />
+            <h2 className="font-heading text-xl text-brandText mb-2">
               Typical engagement timelines
             </h2>
             <ul className="space-y-2 list-disc list-inside">
