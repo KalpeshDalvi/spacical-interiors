@@ -101,34 +101,33 @@ export default function ContactPage() {
           
           // Formatted message content
           message: `
-═══════════════════════════════════════
-     NEW INTERIOR DESIGN INQUIRY
-═══════════════════════════════════════
+NEW INTERIOR DESIGN INQUIRY
+========================================
 
 📋 CONTACT INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+----------------------------------------
 👤 Name:          ${data.name}
 📱 Phone:         ${data.phone}
 📧 Email:         ${data.email || "Not provided"}
 📍 Location:      ${data.city || "Not specified"}
 
 🏗️ PROJECT DETAILS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+----------------------------------------
 🎯 Project Type:  ${data.projectType}
 💰 Budget Range:  ${data.budget}
 📞 Callback:      ${requestCallback ? "✓ YES - Within 24 hours" : "Not requested"}
 
 💬 PROJECT DESCRIPTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+----------------------------------------
 ${data.message || "No additional details provided."}
 
-═══════════════════════════════════════
+========================================
 📅 Submitted: ${new Date().toLocaleString('en-IN', { 
   timeZone: 'Asia/Kolkata',
   dateStyle: 'full',
   timeStyle: 'short'
 })}
-═══════════════════════════════════════
+========================================
           `.trim(),
         }),
       });
@@ -319,6 +318,13 @@ ${data.message || "No additional details provided."}
               </div>
             )}
 
+            <p className="text-xs text-subtleText">
+              To enable email functionality: Sign up at{" "}
+              <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">
+                web3forms.com
+              </a>
+              {" "}(free), get your access key, and replace YOUR_WEB3FORMS_ACCESS_KEY in the code.
+            </p>
           </form>
 
           <div className="space-y-4 text-sm text-subtleText leading-relaxed">
