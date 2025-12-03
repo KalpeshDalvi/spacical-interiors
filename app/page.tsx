@@ -122,31 +122,88 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= ABOUT ================= */}
-      <section className="py-28 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <Image
-          src="/images/about.jpg"
-          width={700}
-          height={500}
-          alt="About Us"
-          className="rounded-xl shadow-xl"
-        />
-        <div>
-          <h2 className="text-4xl font-serif mb-6">About Us</h2>
-          <p className="text-gray-300 mb-4">
-            We transform everyday spaces into stylish, functional and beautifully 
-            crafted environments.
-          </p>
-          <p className="text-gray-400 mb-6">
-            With premium quality execution, unique concepts and timeless designs, 
-            we ensure every space feels personal, elegant and comfortable.
-          </p>
+      {/* ================= ABOUT US ================= */}
+<section className="py-28 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-          <a className="px-6 py-3 inline-block rounded-full bg-blue-600 hover:bg-blue-700 transition">
-            Learn More
-          </a>
-        </div>
-      </section>
+  {/* LEFT IMAGE (Main Large) */}
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.9 }}
+  >
+    <Image
+      src="/images/about-main.jpg"
+      width={700}
+      height={550}
+      alt="Luxury Living Room Interior"
+      className="rounded-xl shadow-lg object-cover w-full"
+    />
+  </motion.div>
+
+  {/* RIGHT IMAGE STACK + TEXT */}
+  <div className="space-y-8">
+
+    {/* Top-right image */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.9, delay: 0.2 }}
+    >
+      <Image
+        src="/images/about-2.jpg"
+        width={650}
+        height={400}
+        alt="Modern Interior Design"
+        className="rounded-xl shadow-lg object-cover w-full"
+      />
+    </motion.div>
+
+    {/* Bottom-right image */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.9, delay: 0.35 }}
+    >
+      <Image
+        src="/images/about-3.jpg"
+        width={650}
+        height={400}
+        alt="Interior Decor Inspiration"
+        className="rounded-xl shadow-lg object-cover w-full"
+      />
+    </motion.div>
+
+    {/* TEXT CONTENT */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      className="mt-4"
+    >
+      <h2 className="text-4xl font-serif mb-6">About Us</h2>
+
+      <p className="text-gray-300 mb-4 leading-relaxed">
+        We transform everyday spaces into stylish, functional and beautifully
+        crafted environments.
+      </p>
+
+      <p className="text-gray-400 mb-8 leading-relaxed">
+        With premium-quality execution, innovative concepts, and timeless
+        design, every space we create feels personal, elegant, and comfortable.
+      </p>
+
+      <a className="px-6 py-3 inline-block rounded-full bg-blue-600 hover:bg-blue-700 transition">
+        Learn More
+      </a>
+    </motion.div>
+
+  </div>
+</section>
+
 
       {/* ================= TESTIMONIALS ================= */}
       <section className="py-28 px-6 max-w-6xl mx-auto">
