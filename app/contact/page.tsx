@@ -35,7 +35,7 @@ export default function ContactPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your actual key from web3forms.com
+          access_key: "1192efe4-4968-4285-99ce-1a64e0af9e1c", // Replace with your actual key from web3forms.com
           subject: "New Interior Design Inquiry from Spacical Interiors",
           from_name: data.name,
           ...data,
