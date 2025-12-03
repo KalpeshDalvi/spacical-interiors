@@ -8,6 +8,7 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "Soft neutrals, light woods and layered lighting for a young couple's first home, designed to feel airy yet intimate.",
+    image: "/images/projects/cosy-2bhk.jpg",
   },
   {
     title: "Contemporary 4BHK Apartment",
@@ -15,6 +16,7 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "A spacious family home with distinct zones, statement lighting and ample storage that stays hidden in plain sight.",
+    image: "/images/projects/4bhk-modern.jpg",
   },
   {
     title: "Open-plan Kitchen & Dining",
@@ -22,6 +24,7 @@ const projects: Project[] = [
     type: "Kitchen",
     description:
       "Wall demolished to create a social cooking and dining space with an island, tall storage and warm finishes.",
+    image: "/images/projects/open-plan-kitchen.jpg",
   },
   {
     title: "Minimal Workspace for Startup",
@@ -29,6 +32,7 @@ const projects: Project[] = [
     type: "Office",
     description:
       "Light-filled work zones, acoustic partitions and greenery for a 20-member tech team.",
+    image: "/images/projects/startup-workspace.jpg",
   },
   {
     title: "Boutique Dental Clinic",
@@ -36,6 +40,7 @@ const projects: Project[] = [
     type: "Clinic",
     description:
       "Clean, calming interiors with smart patient flow, storage and brand elements subtly integrated throughout.",
+    image: "/images/projects/dental-clinic.jpg",
   },
 ];
 
