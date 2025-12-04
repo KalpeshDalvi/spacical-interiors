@@ -173,10 +173,10 @@ export default function ServicesPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-heading text-brandText mb-3">Our Process</h2>
-            <p className="text-sm text-subtleText">Four simple steps to bring your vision to life</p>
+            <p className="text-sm text-subtleText">Five simple steps to bring your vision to life</p>
           </motion.div>
           
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
             {[
               {
                 step: "01",
@@ -217,7 +217,7 @@ export default function ServicesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 )
-              }
+              },
             ].map((process, index) => (
               <motion.div
                 key={process.step}
@@ -225,7 +225,32 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative p-6 rounded-2xl bg-white border border-brand/10 hover:border-brand/30 transition-all hover:shadow-lg group"
+                className={`relative p-6 rounded-2xl bg-white border border-brand/10 hover:border-brand/30 transition-all hover:shadow-lg group ${
+                  process.step === "05" ? "md:col-span-2 lg:col-span-1" : ""
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-12 h-12 rounded-xl ${
+                    process.step === "05" 
+                      ? "bg-gradient-to-br from-green-500 to-emerald-600" 
+                      : "bg-gradient-to-br from-brand to-brandAccent"
+                  } text-white flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                    {process.icon}
+                  </div>
+                  <span className="text-3xl font-bold text-brand/20">{process.step}</span>
+                </div>
+                <h3 className="font-heading text-lg text-brandText mb-2">{process.title}</h3>
+                <p className="text-xs text-subtleText leading-relaxed">{process.description}</p>
+                
+                {process.quote && (
+                  <div className="mt-4 pt-4 border-t border-brand/10">
+                    <p className="text-xs italic text-brand/80 leading-relaxed">
+                      &ldquo;{process.quote}&rdquo;
+                    </p>
+                  </div>
+                )}
+              </motion.div>
+            ))} className="relative p-6 rounded-2xl bg-white border border-brand/10 hover:border-brand/30 transition-all hover:shadow-lg group"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand to-brandAccent text-white flex items-center justify-center group-hover:scale-110 transition-transform">
