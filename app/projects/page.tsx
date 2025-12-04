@@ -11,7 +11,12 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "Soft neutrals, light woods and layered lighting for a young couple's first home, designed to feel airy yet intimate.",
-    image: "/images/cosy-2BHK.jpg",
+    image: "/images/projects/cosy-2bhk.jpg",
+    images: [
+      "/images/projects/cosy-2bhk.jpg",
+      "/images/projects/cosy-2bhk-2.jpg",
+      "/images/projects/cosy-2bhk-3.jpg",
+    ],
   },
   {
     title: "Contemporary 4BHK Apartment",
@@ -19,7 +24,12 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "A spacious family home with distinct zones, statement lighting and ample storage that stays hidden in plain sight.",
-    image: "/images/4bhk-modern.jpg",
+    image: "/images/projects/4bhk-modern.jpg",
+    images: [
+      "/images/projects/4bhk-modern.jpg",
+      "/images/projects/4bhk-modern-2.jpg",
+      "/images/projects/4bhk-modern-3.jpg",
+    ],
   },
   {
     title: "Open-plan Kitchen & Dining",
@@ -27,7 +37,11 @@ const projects: Project[] = [
     type: "Kitchen",
     description:
       "Wall demolished to create a social cooking and dining space with an island, tall storage and warm finishes.",
-    image: "/images/open-plan-kitchen.jpg",
+    image: "/images/projects/open-plan-kitchen.jpg",
+    images: [
+      "/images/projects/open-plan-kitchen.jpg",
+      "/images/projects/open-plan-kitchen-2.jpg",
+    ],
   },
   {
     title: "Minimal Workspace for Startup",
@@ -35,7 +49,12 @@ const projects: Project[] = [
     type: "Office",
     description:
       "Light-filled work zones, acoustic partitions and greenery for a 20-member tech team.",
-    image: "/images/startup-workspace.jpg",
+    image: "/images/projects/startup-workspace.jpg",
+    images: [
+      "/images/projects/startup-workspace.jpg",
+      "/images/projects/startup-workspace-2.jpg",
+      "/images/projects/startup-workspace-3.jpg",
+    ],
   },
   {
     title: "Boutique Dental Clinic",
@@ -43,7 +62,11 @@ const projects: Project[] = [
     type: "Clinic",
     description:
       "Clean, calming interiors with smart patient flow, storage and brand elements subtly integrated throughout.",
-    image: "/images/dental-clinic.jpg",
+    image: "/images/projects/dental-clinic.jpg",
+    images: [
+      "/images/projects/dental-clinic.jpg",
+      "/images/projects/dental-clinic-2.jpg",
+    ],
   },
 ];
 
