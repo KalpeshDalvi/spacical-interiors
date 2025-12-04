@@ -11,9 +11,9 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "Soft neutrals, light woods and layered lighting for a young couple's first home, designed to feel airy yet intimate.",
-    image: "/images/cosy-2bhk.jpg",
+    image: "/images/cosy-2BHK.jpg",
     images: [
-      "/images/cosy-2bhk.jpg",
+      "/images/cosy-2BHK.jpg",
       "/images/bed1.jpg",
       "/images/4bhk-modern.jpg",
     ],
@@ -38,7 +38,7 @@ const projects: Project[] = [
     image: "/images/open-plan-kitchen.jpg",
     images: [
       "/images/open-plan-kitchen.jpg",
-      "/images/kitchen2.jpg",
+      "/images/kitchen1.jpg",
       "/images/modular-kitchen.jpg",
     ],
   },
@@ -61,10 +61,9 @@ const projects: Project[] = [
     type: "Clinic",
     description:
       "Clean, calming interiors with smart patient flow, storage and brand elements subtly integrated throughout.",
-    image: "/images/projects/dental-clinic.jpg",
+    image: "/images/dental-clinic.jpg",
     images: [
       "/images/projects/dental-clinic.jpg",
-      "/images/projects/dental-clinic-2.jpg",
     ],
   },
 ];
