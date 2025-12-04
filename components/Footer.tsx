@@ -19,7 +19,7 @@ export default function Footer() {
             <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-all duration-300 hover:scale-110">
               <span className="text-white text-sm">𝕏</span>
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-all duration-300 hover:scale-110">
+            <a href="https://www.instagram.com/spacical.interiors/?igsh=MTI2cmQ3YmhoYTd0dA%3D%3D" className="w-10 h-10 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-all duration-300 hover:scale-110">
               <span className="text-white text-sm">in</span>
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-all duration-300 hover:scale-110">
