@@ -346,7 +346,7 @@ ${data.message || "No additional details provided."}
 
             {/* WhatsApp Connect Button */}
             <a
-              href="https://wa.me/917040172219?text=Hi%2C%20I%27m%20interested%20in%20your%20interior%20design%20services.%20I%27d%20like%20to%20discuss%20my%20project."
+              href="https://wa.me/919730831093?text=Hi%2C%20I%27m%20interested%20in%20your%20interior%20design%20services.%20I%27d%20like%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-3.5 text-sm font-semibold shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
