@@ -343,9 +343,6 @@ ${data.message || "No additional details provided."}
               WhatsApp and we&apos;ll suggest the best way to take things
               forward.
             </p>
-            <p className="font-semibold text-brandText mb-4">
-              WhatsApp: +91-7040172219
-            </p>
 
             {/* WhatsApp Connect Button */}
             <a
