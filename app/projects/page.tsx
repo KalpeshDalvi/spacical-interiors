@@ -63,7 +63,7 @@ const projects: Project[] = [
       "Clean, calming interiors with smart patient flow, storage and brand elements subtly integrated throughout.",
     image: "/images/dental-clinic.jpg",
     images: [
-      "/images/projects/dental-clinic.jpg",
+      "/images/dental-clinic.jpg",
     ],
   },
 ];
