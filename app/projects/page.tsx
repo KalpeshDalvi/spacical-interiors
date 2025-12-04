@@ -11,7 +11,7 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "Soft neutrals, light woods and layered lighting for a young couple's first home, designed to feel airy yet intimate.",
-    image: "/images/cosy-2bhk.jpg",
+    image: "/images/cosy-2BHK.jpg",
   },
   {
     title: "Contemporary 4BHK Apartment",
