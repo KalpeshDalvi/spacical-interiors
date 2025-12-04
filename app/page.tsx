@@ -162,8 +162,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-      
-{/* ================= TESTIMONIALS ================= */}
+
+      {/* ================= TESTIMONIALS ================= */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2 
@@ -239,6 +239,7 @@ export default function Home() {
           ))}
         </motion.div>
       </section>
+
       {/* ================= ABOUT US ================= */}
       <section className="py-32 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
@@ -341,4 +342,32 @@ const WHY_US = [
   { title: "Premium Quality", desc: "We use best-in-class materials and skilled craftsmanship." },
   { title: "Creative Expertise", desc: "Unique aesthetic aligned with your taste." },
   { title: "Personalized Solutions", desc: "Every design is crafted around your lifestyle." },
+];
+
+const TESTIMONIALS = [
+  {
+    name: "Priya & Rajesh Sharma",
+    project: "3BHK Apartment Interior",
+    location: "Wakad, Pune",
+    quote: "Spacical Interiors transformed our apartment into a dream home. The team understood our vision perfectly and delivered beyond expectations. The attention to detail and quality of work is outstanding!"
+  },
+  {
+    name: "Dr. Sneha Patil",
+    project: "Dental Clinic Design",
+    location: "Kothrud, Pune",
+    quote: "Professional, creative, and incredibly patient with all our requests. They designed a clinic that's both functional for our team and calming for our patients. Highly recommend their commercial design expertise!"
+  },
+  {
+    name: "Amit Kulkarni",
+    project: "4BHK Villa Renovation",
+    location: "Baner, Pune",
+    quote: "From concept to execution, everything was seamless. The project was completed on time and within budget. Our home now reflects our personality perfectly. Thank you, Spacical Interiors!"
+  }
+];
+
+const TRUST_STATS = [
+  { number: "50+", label: "Projects Completed" },
+  { number: "100%", label: "Client Satisfaction" },
+  { number: "5+", label: "Years Experience" },
+  { number: "30+", label: "Happy Families" }
 ];
