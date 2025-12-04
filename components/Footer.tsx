@@ -60,13 +60,13 @@ export default function Footer() {
           <h4 className="font-semibold text-white mb-4 text-lg">Contact</h4>
           <div className="space-y-3 text-sm">
             <p className="text-cream/90 flex items-start gap-2">
-              <span className="text-brand">📍</span> Pune, Maharashtra, India
+              <span className="text-brand">📍</span> Kharadi, Pune, Maharashtra, India
             </p>
             <p className="text-cream/90 flex items-start gap-2">
-              <span className="text-brand">📱</span> Phone / WhatsApp: +91-XXXXXXXXXX
+              <span className="text-brand">📱</span> Phone / WhatsApp: +91-9730831093
             </p>
             <p className="text-cream/90 flex items-start gap-2">
-              <span className="text-brand">✉️</span> hello@spacicalinteriors.com
+              <span className="text-brand">✉️</span> info@spacicalinteriors.com
             </p>
           </div>
         </div>
