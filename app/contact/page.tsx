@@ -156,25 +156,24 @@ ${data.message || "No additional details provided."}
     <>
       {/* Header with Graphics */}
       <Section background="light">
-        <div className="relative max-w-4xl mx-auto text-center py-12">
+        <div className="relative max-w-4xl mx-auto text-center py-6">
           {/* Decorative circles */}
-          <div className="absolute top-0 left-10 w-20 h-20 bg-brand/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-0 right-10 w-32 h-32 bg-brandAccent/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-10 w-16 h-16 bg-brand/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 right-10 w-20 h-20 bg-brandAccent/10 rounded-full blur-3xl"></div>
           
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand/10 rounded-full mb-4">
-              <svg className="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand/10 rounded-full mb-2">
+              <svg className="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span className="text-sm font-medium text-brand">Get in touch</span>
+              <span className="text-xs font-medium text-brand">Get in touch</span>
             </div>
             
-            <h1 className="text-3xl md:text-4xl font-heading text-brandText mb-3">
+            <h1 className="text-xl md:text-2xl font-heading text-brandText mb-1.5">
               Let&apos;s Create Your <span className="text-brand">Dream Space</span>
             </h1>
-            <p className="text-sm md:text-base text-subtleText max-w-2xl mx-auto">
-              Share your vision with us and we&apos;ll transform it into reality. 
-              Our team will respond within one business day.
+            <p className="text-xs md:text-sm text-subtleText max-w-2xl mx-auto">
+              Share your vision with us. We&apos;ll respond within one business day.
             </p>
           </div>
         </div>
