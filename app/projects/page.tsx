@@ -11,11 +11,11 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "Soft neutrals, light woods and layered lighting for a young couple's first home, designed to feel airy yet intimate.",
-    image: "/images/projects/cosy-2bhk.jpg",
+    image: "/images/cosy-2bhk.jpg",
     images: [
-      "/images/projects/cosy-2bhk.jpg",
-      "/images/projects/cosy-2bhk-2.jpg",
-      "/images/projects/cosy-2bhk-3.jpg",
+      "/images/cosy-2bhk.jpg",
+      "/images/bed1.jpg",
+      "/images/4bhk-modern.jpg",
     ],
   },
   {
@@ -24,11 +24,9 @@ const projects: Project[] = [
     type: "Residence",
     description:
       "A spacious family home with distinct zones, statement lighting and ample storage that stays hidden in plain sight.",
-    image: "/images/projects/4bhk-modern.jpg",
+    image: "/images/4bhk-modern.jpg",
     images: [
-      "/images/projects/4bhk-modern.jpg",
-      "/images/projects/4bhk-modern-2.jpg",
-      "/images/projects/4bhk-modern-3.jpg",
+      "/images/4bhk.jpg"
     ],
   },
   {
@@ -37,10 +35,11 @@ const projects: Project[] = [
     type: "Kitchen",
     description:
       "Wall demolished to create a social cooking and dining space with an island, tall storage and warm finishes.",
-    image: "/images/projects/open-plan-kitchen.jpg",
+    image: "/images/open-plan-kitchen.jpg",
     images: [
-      "/images/projects/open-plan-kitchen.jpg",
-      "/images/projects/open-plan-kitchen-2.jpg",
+      "/images/open-plan-kitchen.jpg",
+      "/images/kitchen2.jpg",
+      "/images/modular-kitchen.jpg",
     ],
   },
   {
@@ -51,9 +50,9 @@ const projects: Project[] = [
       "Light-filled work zones, acoustic partitions and greenery for a 20-member tech team.",
     image: "/images/projects/startup-workspace.jpg",
     images: [
-      "/images/projects/startup-workspace.jpg",
-      "/images/projects/startup-workspace-2.jpg",
-      "/images/projects/startup-workspace-3.jpg",
+      "/images/startup-workspace.jpg",
+      "/images/startup.jpg",
+      "/images/startup1.jpg",
     ],
   },
   {
