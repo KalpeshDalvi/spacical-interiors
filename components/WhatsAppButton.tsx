@@ -1,7 +1,7 @@
 "use client";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "919XXXXXXXXX"; // Replace with actual number (format: country code + number, no + or spaces)
+  const phoneNumber = "919730831093"; // Replace with actual number (format: country code + number, no + or spaces)
   const message = "Hi! I'm interested in your interior design services.";
   
   const handleClick = () => {
