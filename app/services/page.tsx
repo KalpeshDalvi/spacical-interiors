@@ -218,6 +218,17 @@ export default function ServicesPage() {
                   </svg>
                 )
               },
+              {
+                step: "05",
+                title: "Handover",
+                description: "Your space is ready! We present your completed home with care instructions and celebrate this milestone with you.",
+                quote: "A house is made of bricks and beams. A home is made of hopes and dreams.",
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                  </svg>
+                )
+              }
             ].map((process, index) => (
               <motion.div
                 key={process.step}
@@ -249,17 +260,6 @@ export default function ServicesPage() {
                     </p>
                   </div>
                 )}
-              </motion.div>
-            ))} className="relative p-6 rounded-2xl bg-white border border-brand/10 hover:border-brand/30 transition-all hover:shadow-lg group"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand to-brandAccent text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {process.icon}
-                  </div>
-                  <span className="text-3xl font-bold text-brand/20">{process.step}</span>
-                </div>
-                <h3 className="font-heading text-lg text-brandText mb-2">{process.title}</h3>
-                <p className="text-xs text-subtleText leading-relaxed">{process.description}</p>
               </motion.div>
             ))}
           </div>
