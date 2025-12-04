@@ -162,7 +162,83 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
+{/* ================= TESTIMONIALS ================= */}
+      <section className="py-32 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <motion.h2 
+            className="section-heading text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            What Our Clients Say
+          </motion.h2>
+          <motion.p 
+            className="section-subheading text-center mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            Real experiences from homeowners and businesses we've worked with
+          </motion.p>
+        </div>
 
+        <div className="grid md:grid-cols-3 gap-8">
+          {TESTIMONIALS.map((testimonial, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="card group hover:shadow-cardHover"
+            >
+              {/* Star Rating */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, index) => (
+                  <svg key={index} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <p className="text-subtleText text-sm leading-relaxed mb-6 italic">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+
+              {/* Client Info */}
+              <div className="flex items-center gap-4 pt-4 border-t border-brand/10">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand to-brandAccent flex items-center justify-center text-white font-bold text-lg">
+                  {testimonial.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-brandText">{testimonial.name}</h4>
+                  <p className="text-xs text-subtleText">{testimonial.project}</p>
+                  <p className="text-xs text-brand">{testimonial.location}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Trust Stats */}
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-brand/20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {TRUST_STATS.map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-brand mb-2">{stat.number}</div>
+              <div className="text-sm text-subtleText">{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
+      </section>
       {/* ================= ABOUT US ================= */}
       <section className="py-32 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
