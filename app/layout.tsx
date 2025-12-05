@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "Spacical Interiors | Interior Design Studio",
   description:
     "Spacical Interiors transforms homes and workplaces into functional, stylish and beautifully crafted spaces in Pune and beyond.",
+    icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
